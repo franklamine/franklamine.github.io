@@ -1,0 +1,21 @@
+ <!ELEMENT avions (base+, avion+)>
+        <!ELEMENT base EMPTY>
+        <!ATTLIST base
+                base_id ID #REQUIRED
+                localite CDATA #IMPLIED>
+        <!ELEMENT avion (modele, constructeur, capacite?, autonomie?, mission?)>
+        <!ELEMENT mission (titre, description, urgence)>
+        <!ELEMENT modele (#PCDATA)>
+        <!ELEMENT constructeur (#PCDATA)>
+        <!ELEMENT capacite (#PCDATA)>
+        <!ELEMENT autonomie (#PCDATA)>
+        <!ELEMENT titre (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT urgence (#PCDATA)>
+        <!ATTLIST avion
+                avion_id ID #REQUIRED
+                type (chasse|marchandise|brousse|ligne|sauvetage) #REQUIRED
+                base_id IDREF #IMPLIED>
+
+
+

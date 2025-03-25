@@ -1,0 +1,512 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/*#################### MENU DE NAVIGATION ##########################*/
+nav {
+    width: 100%;
+    background-color: black;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+nav img {
+    height:61px;
+    width:110px;
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.sous {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+}
+
+nav > ul li:hover .sous {
+    display: block;
+    padding: 10px;
+}
+
+.sous a:hover {
+    border-bottom: none;
+    background-color: #484849;
+    padding: 5px;
+}
+
+.sous li {
+    margin-top: 10px;
+}
+
+/*############################### PAGE ACCUEIL: LA PGM ###################################*/
+.section-principale-accueil {
+    display: flex;
+    width: 100%;
+}
+
+.section-principale-accueil ul li {
+    padding-bottom: 10px;
+}
+
+.section-principale-accueil h1, .section-principale-accueil h2 {
+    text-align: center;
+}
+
+.section-contenu {
+    width: 60%;
+    padding: 10px;
+}
+
+.tables-matieres, .liens-utiles {
+    background-color: lightgrey;
+    padding-right: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.tables-matieres {
+    width: 20%;
+}
+
+.liens-utiles {
+    width: 20%;
+}
+
+.haut {
+    text-align: right;
+}
+
+/* Format d'ecran tablette */
+@media screen and (min-width: 600px) and  (max-width: 992px) {
+    .liens-utiles {
+        display: none;
+    }
+
+    .tables-matieres {
+        width: 30%;
+    }
+
+    .section-contenu {
+        width: 70%;
+    }
+
+    body {
+        background-color: darkcyan;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+    }
+}
+
+/* Format d'ecran mobile */
+@media screen and (max-width: 600px) {
+    .tables-matieres, .liens-utiles {
+        display: none;
+    }
+
+    .section-contenu {
+        width: 100%;
+        padding: 20px;
+    }
+
+    body {
+        background-color: burlywood;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav > ul li {
+        list-style-type: none;
+        margin: 0;
+        padding: 3px;
+        width: 100%;
+    }
+}
+
+/*############################### PAGE 2: LA PGM AU CAMEROUN ###############################*/
+.section-principale-page2 .image-et-menu {
+    display: flex;
+    width: 100%;
+}
+
+.section-principale-page2 .partie-image {
+    width: 80%;
+    box-shadow: 0 2px 3px #CCC;
+    margin: 20px;
+    padding: 20px;
+}
+
+.section-principale-page2 .partie-menu {
+    width: 20%;
+    background-color: lightblue;
+    border-radius: 10px;
+    flex-grow: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: background-color 5s, transform 3s;
+}
+
+.section-principale-page2 .partie-menu:hover {
+    /*transform: rotatey(30deg) ;*/
+    transform: scale(1.03);
+    background-color: #484849;
+}
+
+.section-principale-page2 .partie-menu li {
+    margin-bottom: 10px;
+}
+
+.section-principale-page2 .partie-menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.section-principale-page2 .image-tableau {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.section-principale-page2 .image-tableau .table1 {
+    width: 50%;
+    border-spacing: 5px;
+    transition: transform 5s;
+}
+
+.section-principale-page2 .image-tableau .table1:hover {
+    transform: rotatey(180deg);
+}
+
+.section-principale-page2 .image-tableau .table2 {
+    width: 50%;
+    transition: transform 5s;
+}
+
+.section-principale-page2 .image-tableau .table2:hover {
+    transform: rotatey(180deg);
+}
+
+.section-principale-page2 td {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cell1 {
+    background-image: url("../images/image1.jpg");
+}
+
+.cell2 {
+    background-image: url("../images/image2.jpg");
+}
+
+.cell3 {
+    background-image: url("../images/image3.jpg");
+}
+
+.cell4 {
+    background-image: url("../images/image4.jpg");
+}
+
+.cell5 {
+    background-image: url("../images/image5.jpg");
+}
+
+.cell6 {
+    background-image: url("../images/image6.jpg");
+}
+
+.cell7 {
+    background-image: url("../images/image7.jpg");
+}
+
+.cell8 {
+    background-image: url("../images/image8.jpg");
+}
+
+.cell9 {
+    background-image: url("../images/image9.jpg");
+}
+
+.cell10 {
+    background-image: url("../images/image10.jpg");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.partie-contenu div {
+    box-shadow: 0 2px 3px #CCC;
+    margin: 20px;
+    padding: 20px;
+}
+
+.section-principale-page2 h2 {
+    margin-left: 30px;
+}
+
+/* Format d'ecran tablette */
+@media screen and (min-width: 600px) and  (max-width: 992px) {
+    .section-principale-page2 .partie-menu {
+        display: none;
+    }
+
+    .section-principale-page2 .partie-image {
+        width: 100%;
+    }
+
+    .image-tableau {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-principale-page2 .image-tableau .table1 {
+        height: 600px;
+        width: 100%;
+    }
+
+    .section-principale-page2 .image-tableau .table2 {
+        width: 100%;
+    }
+}
+
+/* Format d'ecran mobile */
+@media screen and (max-width: 600px) {
+    .section-principale-page2 .partie-menu {
+        display: none;
+    }
+
+    .image-tableau {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-principale-page2 .image-tableau .table1 {
+        height: 600px;
+        width: 100%;
+    }
+
+    .section-principale-page2 .image-tableau .table2 {
+        width: 100%;
+    }
+
+}
+
+/*############################### SECTION PAGE 3 ###############################*/
+.section-principale-page3 {
+    display: flex;
+    width: 100%;
+}
+
+.section-principale-page3 .partie-menu {
+    background-color: gray;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 20%;
+}
+
+.section-principale-page3 .partie-image {
+    box-shadow: 0 2px 3px #CCC;
+    margin: 20px;
+    width: 80%;
+}
+
+.section-principale-page3 table {
+    border-spacing: 10px;
+    width: 100%;
+}
+
+.section-principale-page3 h1 {
+    margin-left: 30px;
+}
+
+.section-principale-page3 td {
+    width: 50%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5%;
+    transition: transform 1s;
+}
+
+.section-principale-page3 td:hover {
+    transform: scale(1.02);
+}
+
+.cell11 {
+    background-image: url("../images/image11.jpg");
+}
+
+.cell12 {
+    background-image: url("../images/image12.jpg");
+}
+
+.cell13 {
+    background-image: url("../images/image13.jpg");
+}
+
+.cell14 {
+    background-image: url("../images/image14.jpg");
+}
+
+
+/* Format d'ecran tablette */
+@media screen and (min-width: 600px) and  (max-width: 992px) {
+    .section-principale-page3 {
+        flex-direction: column;
+    }
+
+    .section-principale-page3 .partie-menu {
+        width: 90%;
+    }
+
+    .section-principale-page3 .partie-image {
+        width: 95%;
+    }
+}
+
+/* Format d'ecran mobile */
+@media screen and (max-width: 600px) {
+    .section-principale-page3 {
+        flex-direction: column;
+    }
+
+    .section-principale-page3 .partie-menu {
+        width: 80%;
+    }
+
+    .section-principale-page3 .partie-image {
+        width: 90%;
+    }
+
+    .section-principale-page3 .partie-image table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-principale-page3 td {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/*############################### PARTIE 4 ANIMATIONS ###############################*/
+.section-principale-page4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section-principale-page4 div {
+    margin: 30px;
+}
+
+#animation1 {
+    width: 72px;
+    height: 72px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+.section-principale-page4 .anim1 {
+    transition: transform 2s;
+    transform: rotate(-180deg) scale(1.4);
+}
+
+#animation2, #animation3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 10px;
+}
+
+
+.section-principale-page4 .anim2 {
+    position: relative;
+    animation-name: position-anim2;
+    animation-duration: 4s;
+}
+
+@keyframes position-anim2 {
+    0% {
+        left: 0;
+    }
+    25% {
+        left: 50px;
+    }
+    50% {
+        left: 0;
+    }
+    75% {
+        left: -50px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.section-principale-page4 .anim3 {
+    position: relative;
+    animation-name: position-anim3;
+    animation-duration: 4s;
+}
+
+@keyframes position-anim3 {
+    0% {
+        bottom: -80px;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+
+/*###############################PIEDS DE PAGE###############################*/
+footer {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.pieds-page4 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

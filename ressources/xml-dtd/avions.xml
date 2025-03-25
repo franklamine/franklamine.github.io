@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE avions SYSTEM "avions.dtd">
+<avions>
+
+    <base base_id="B1" localite="Nord"/>
+    <base base_id="B2" localite="Sud"/>
+
+      <avion avion_id="A1" type="chasse" base_id="B1">
+        <modele>F-22 Raptor</modele>
+        <constructeur>Lockheed Martin</constructeur>
+        <capacite>2 pilotes</capacite>
+        <autonomie>3000 km</autonomie>
+        <mission>
+            <titre>Reconnaissance</titre>
+            <description>Mission de reconnaissance aérienne</description>
+            <urgence>Haute</urgence>
+        </mission>
+    </avion>
+
+    <avion avion_id="A2" type="marchandise" base_id="B2">
+        <modele>C-130 Hercules</modele>
+        <constructeur>Lockheed Martin</constructeur>
+        <capacite>6 tonnes</capacite>
+        <autonomie>5000 km</autonomie>
+        <mission>
+            <titre>Transport de matériel</titre>
+            <description>Transport de matériel lourd pour les troupes</description>
+            <urgence>Moyenne</urgence>
+        </mission>
+    </avion>
+
+    <avion avion_id="A3" type="brousse">
+        <modele>Antonov An-2</modele>
+        <constructeur>Antonov</constructeur>
+        <capacite>10 passagers</capacite>
+        <autonomie>1000 km</autonomie>
+        <mission>
+            <titre>Transport de vivres</titre>
+            <description>Transport de vivres dans les régions isolées</description>
+            <urgence>Basse</urgence>
+        </mission>
+    </avion>
+
+    <avion avion_id="A4" type="sauvetage" base_id="B1">
+        <modele>Super Puma</modele>
+        <constructeur>Aérospatiale</constructeur>
+        <capacite>5 passagers</capacite>
+        <autonomie>1500 km</autonomie>
+        <mission>
+            <titre>Secours en mer</titre>
+            <description>Mission de sauvetage en mer</description>
+            <urgence>Haute</urgence>
+        </mission>
+    </avion>
+</avions>

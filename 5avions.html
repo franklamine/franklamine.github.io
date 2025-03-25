@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage XML Avions</title>
+    <link rel="stylesheet" href="ressources/css/style.css">
+    <link rel="stylesheet" href="ressources/css/5avions.css">
+    <script src="ressources/script/script.js" defer></script>
+</head>
+<body>
+<div id="header"></div> <!-- Inclusion de l'en-tête -->
+<h1>Liste des Avions</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID Avion</th>
+        <th>Type</th>
+        <th>Base</th>
+        <th>Modèle</th>
+        <th>Constructeur</th>
+        <th>Capacité</th>
+        <th>Autonomie</th>
+        <th>Mission</th>
+    </tr>
+    </thead>
+    <tbody id="xmlData"></tbody>
+</table>
+<script>
+    // Lecture du fichier XML et affichage des données
+    fetch("ressources/xml-dtd/avions.xml")
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(data, "text/xml");
+            const avions = xml.getElementsByTagName("avion");
+            const tbody = document.getElementById("xmlData");
+
+            for (let avion of avions) {
+                const avionId = avion.getAttribute("avion_id");
+                const type = avion.getAttribute("type");
+                const baseId = avion.getAttribute("base_id");
+                const modele = avion.getElementsByTagName("modele")[0]?.textContent || "N/A";
+                const constructeur = avion.getElementsByTagName("constructeur")[0]?.textContent || "N/A";
+                const capacite = avion.getElementsByTagName("capacite")[0]?.textContent || "N/A";
+                const autonomie = avion.getElementsByTagName("autonomie")[0]?.textContent || "N/A";
+
+                // Gestion des missions
+                const missionElement = avion.getElementsByTagName("mission")[0];
+                let mission = "N/A";
+                if (missionElement) {
+                    const titre = missionElement.getElementsByTagName("titre")[0]?.textContent || "";
+                    const description = missionElement.getElementsByTagName("description")[0]?.textContent || "";
+                    const urgence = missionElement.getElementsByTagName("urgence")[0]?.textContent || "";
+                    mission = `${titre} (${description} - Urgence: ${urgence})`;
+                }
+
+                const row = `
+                        <tr>
+                            <td>${avionId}</td>
+                            <td>${type}</td>
+                            <td>${baseId || "N/A"}</td>
+                            <td>${modele}</td>
+                            <td>${constructeur}</td>
+                            <td>${capacite}</td>
+                            <td>${autonomie}</td>
+                            <td>${mission}</td>
+                        </tr>
+                    `;
+                tbody.innerHTML += row;
+            }
+        })
+        .catch(error => console.error("Erreur lors du chargement du fichier XML:", error));
+</script>
+<div class="pieds-page4" id="footer"></div> <!-- Inclusion du pied de page -->
+</body>
+</html>
